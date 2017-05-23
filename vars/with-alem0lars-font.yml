@@ -1,5 +1,6 @@
-features:
-  - dunst
+font:
+  name:
+    Hack
 
 
 # vim: set filetype=eruby.yaml :

@@ -1,5 +1,6 @@
-features:
-  - dunst
+font:
+  size:
+    11
 
 
 # vim: set filetype=eruby.yaml :

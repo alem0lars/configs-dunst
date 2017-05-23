@@ -1,4 +1,4 @@
-# => inherits: generic, with-user-alem0lars, with-gpg-sign <= #
+# => inherits: generic, with-alem0lars-font, with-hidpi <= #
 
 
 # vim: set filetype=eruby.yaml :
