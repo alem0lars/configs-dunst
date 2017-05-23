@@ -1,0 +1,8 @@
+elems:
+
+  - src:  ^(dunstrc)$
+    dst:  <%= xdg_config_home :dunst %>/<1>
+    only: f?dunst
+
+
+# vim: set filetype=eruby.yaml :
