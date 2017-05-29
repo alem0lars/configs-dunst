@@ -1,6 +1,6 @@
 font:
-  name:
-    Hack
+  name: Hack
+  size: 11
 
 
 # vim: set filetype=eruby.yaml :

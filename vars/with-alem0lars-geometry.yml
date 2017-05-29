@@ -1,0 +1,8 @@
+geometry:
+  width: 320
+  height: 64
+  pad_vert: 30
+  pad_horiz: 10
+
+
+# vim: set filetype=eruby.yaml :

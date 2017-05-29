@@ -32,7 +32,60 @@
 # ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
   variable :"font.name", type: :string, as: :font_name
-  variable :"font.size", type: :string, as: :font_size
+  variable :"font.size", type: :int, as: :font_size
+  variable :hidpi, type: :bool, default: false
+
+  variable :"geometry.width", type: :int, as: :width
+  variable :"geometry.height", type: :int, as: :height
+  variable :"geometry.pad_vert", type: :int, as: :pad_vert
+  variable :"geometry.pad_horiz", type: :int, as: :pad_horiz
+
+  computed(:hidpi_font_multiplier) { 1.45 }
+  computed(:hidpi_geometry_multiplier) { 1.5 }
+
+  computed(:font_size) do
+    if local! :hidpi
+      local!(:font_size) * local!(:hidpi_font_multiplier)
+    else
+      local! :font_size
+    end.to_i
+  end
+
+  computed(:width) do
+    if local! :hidpi
+      local!(:width) * local!(:hidpi_geometry_multiplier)
+    else
+      local! :width
+    end.to_i
+  end
+
+  computed :height do
+    if local! :hidpi
+      local!(:height) * local!(:hidpi_geometry_multiplier)
+    else
+      local! :height
+    end.to_i
+  end
+
+  computed :pad_vert do
+    if local! :hidpi
+      local!(:pad_vert) * local!(:hidpi_geometry_multiplier)
+    else
+      local! :pad_vert
+    end.to_i
+  end
+
+  computed :pad_horiz do
+    if local! :hidpi
+      local!(:pad_horiz) * local!(:hidpi_geometry_multiplier)
+    else
+      local! :pad_horiz
+    end.to_i
+  end
+
+  computed :geometry_str do
+    "#{local! :width}x#{local! :height}-#{local! :pad_horiz}+#{local! :pad_vert}"
+  end
 end -%>
 # ─────────────────────────────────────────────────────────────────────────────┘
 
@@ -108,7 +161,7 @@ hide_duplicates_count = yes
 # the top and down respectevly.
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
-geometry = "320x64-30+30"
+geometry = "<%= local! :geometry_str %>"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
