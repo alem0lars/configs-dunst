@@ -31,6 +31,8 @@
 #                                                                              │
 # ─────────────────────────────────────────────────────────────────────────────┤
 <% define_locals do
+  variable :web_browser, type: :string
+
   variable :"font.name", type: :string, as: :font_name
   variable :"font.size", type: :int, as: :font_size
   variable :hidpi, type: :bool, default: false
@@ -236,7 +238,7 @@ startup_notification = false
 dmenu = /usr/bin/dmenu -p dunst:
 
 # Browser for opening urls in context menu.
-browser = /usr/bin/firefox -new-tab
+browser = <%= local! :web_browser %>
 
 # Align icons left/right/off
 icon_position = left
