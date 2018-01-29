@@ -1,4 +1,4 @@
-# => inherits: generic, with-alem0lars-font, with-alem0lars-geometry, with-hidpi, with-firefox <= #
+# => inherits: generic, with-alem0lars-font, with-alem0lars-geometry, with-firefox <= #
 
 
 # vim: set filetype=eruby.yaml :
