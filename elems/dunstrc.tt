@@ -150,7 +150,6 @@ ignore_newline = no
 stack_duplicates = yes
 hide_duplicates_count = yes
 
-
 # The geometry of the window:
 #   [{width}]x{height}[+/-{x}+/-{y}]
 # The geometry of the message window.
