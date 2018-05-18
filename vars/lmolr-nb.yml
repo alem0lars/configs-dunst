@@ -1,0 +1,12 @@
+# => inherits: generic, with-hidpi, with-chromium <= #
+
+font:
+  name: Hack
+  size: 9
+geometry:
+  width: 320
+  height: 64
+  pad_vert: 30
+  pad_horiz: 10
+
+# vim: set filetype=eruby.yaml :
