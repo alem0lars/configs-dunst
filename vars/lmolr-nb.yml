@@ -2,8 +2,8 @@
 
 
 font:
-  name: Hack
-  size: 9
+  name: Noto
+  size: 8
 geometry:
   width: 320
   height: 64
